@@ -24,4 +24,7 @@ select
   has_narrative 
 from    
     stg_cfpb_complaints
-where  REGEXP_LIKE(zip_code, '^[0-9]{5}$')
+where  REGEXP_LIKE(zip_code, '^[0-9]{5}$') AND
+       product is NOT NULL AND 
+       date_received is not null
+       
