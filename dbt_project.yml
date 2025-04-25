@@ -37,6 +37,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   CFPB_project:
+    +database: "{{ env_var('DBT_DATABASE') }}"
+    +schema: "{{ env_var('DBT_SCHEMA') }}"
+    +warehouse: "{{ env_var('DBT_WAREHOUSE') }}"
     marts:
       +materialized: table
     intermediate:
