@@ -6,12 +6,13 @@ models:
       - name: PRODUCT
         tests: 
           - not_null
-          - accepted_values:
-              values: ['Debt collection', 'Credit card', 'Credit reporting or other personal consumer reports']
       - name: COMPLAINT_ID
         tests:
           - not_null
           - unique
-          
+      - name: SUBMITTED_VIA
+        tests:
+          - accepted_values:
+              values: ['Phone', 'Web', 'Referral', 'Postal mail', 'Mail']
           
       
