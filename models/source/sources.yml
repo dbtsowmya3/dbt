@@ -1,0 +1,58 @@
+version: 2
+
+sources:
+  - name: consumer_complaints
+    database: RAW                # The database name for raw data
+    schema: CFPB               # The schema where your raw tables exist
+    tables:
+      - name: CFPB_DATA  # The name of the table in your raw database
+        description: "Consumer complaint data containing information on complaints filed with the company."
+        columns:
+          - name: product
+            description: "The product related to the complaint"
+            data_type: STRING
+          - name: sub_product
+            description: "The sub-product related to the complaint"
+            data_type: STRING
+          - name: issue
+            description: "The issue or category of the complaint"
+            data_type: STRING
+          - name: sub_issue
+            description: "The sub-issue related to the complaint"
+            data_type: STRING
+          - name: company
+            description: "The name of the company the complaint is against"
+            data_type: STRING
+          - name: state
+            description: "The state where the complaint was filed"
+            data_type: STRING
+          - name: zip_code
+            description: "The zip code where the consumer is located"
+            data_type: STRING
+          - name: date_received
+            description: "The date when the complaint was received"
+            data_type: TIMESTAMP
+          - name: date_sent_to_company
+            description: "The date the complaint was sent to the company"
+            data_type: TIMESTAMP
+          - name: submitted_via
+            description: "The method through which the complaint was submitted (e.g., web, phone)"
+            data_type: STRING
+          - name: consumer_consent_provided
+            description: "Whether the consumer provided consent for their complaint to be shared publicly"
+            data_type: STRING
+          - name: company_response
+            description: "The response provided by the company regarding the complaint"
+            data_type: STRING
+          - name: company_public_response
+            description: "The public response from the company (if available)"
+            data_type: STRING
+          - name: complaint_id
+            description: "A unique identifier for the complaint"
+            data_type: STRING
+          - name: consumer_disputed
+            description: "Whether the consumer disputed the company's response"
+            data_type: STRING
+          - name: has_narrative
+            description: "Indicates if the complaint includes a narrative (true or false)"
+            data_type: BOOLEAN

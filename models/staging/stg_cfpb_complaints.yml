@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_cfpb_complaints
+    columns:
+      - name: PRODUCT
+        tests: 
+          - not_null
+          - accepted_values:
+              values: ['Debt collection', 'Credit card', 'Credit reporting or other personal consumer reports']
+      - name: COMPLAINT_ID
+        tests:
+          - not_null
+          - unique
+          
+          
+      
